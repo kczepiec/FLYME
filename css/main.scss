@@ -1,0 +1,423 @@
+// VARIABLES
+
+// 1. Header (variables used in header)
+
+$theme-color: #006aba; // Main color
+$header-image: url("./img/bg.jpeg") center center; // Header background
+$btn-yellow: #ffdb4c; // Button yellow
+$btn-blue: #166bb5; // Button blue
+$white: #FFF; // White font color
+$black: #000; // Black font color
+$search__label: #626e76; // Label font color in search
+$border-color: #f4f4f4; // Border color in search inputs
+
+// 3. FOOTER
+
+$footer__copy: #145aa6;
+
+
+/*  ====================================
+    1. GENERAL
+    ====================================  */
+
+*, *:hover, *:focus {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 14px;
+	color: $theme-color;
+}
+
+a, a:hover, a:focus {
+	-webkit-transition: all 300ms ease 0s;
+	transition: all 300ms ease 0s;
+	color: $theme-color;
+}
+
+
+/*  ====================================
+	2. HEADER
+    ====================================  */
+	nav {
+	    position: -webkit-sticky;
+	    position: sticky;
+	    top: 0;
+	    z-index: 2;
+
+		&.navbar-default {
+			width: 100%;
+			padding: 10px 0px;
+			background-color: #FFF;
+			background-image: none;
+			color: $theme-color;
+			border-radius: 0;
+			border-bottom: 1px solid #E4E4E4;
+			margin-bottom: 0px;
+			box-shadow: none;
+
+			.navbar-header {
+				.navbar-brand {
+					padding: 3px 15px;
+				}
+			}
+
+			.navbar-nav {
+				> li > a {
+					margin-left: 10px; 
+					&:hover, &:focus {
+						color: $theme-color;
+						background-color: transparent;
+						background-image: none;
+						text-shadow: 0;
+						box-shadow: 0;
+					}
+				}
+
+				.dropdown-menu {
+					box-shadow: 0 0 0 0;
+					margin-top: 11px;
+					padding: 0;
+					border-top: 0px;
+					border-radius: 0;
+
+					> li > a {
+						padding: 10px 20px;
+
+						&:hover {
+							background-image: none;
+							background-color: #3c365a;
+							color: #fff;
+						}
+					}
+				}
+
+				> .open > a {
+					background-image: none;
+					box-shadow: 0;
+					background-color: $theme-color;
+					color: #fff;
+
+					&:focus {
+						background-image: none;
+						box-shadow: 0;
+						background-color: $theme-color;
+						color: #fff;
+					}
+
+					&:hover {
+						background-image: none;
+						box-shadow: 0;
+						background-color: $theme-color;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.header {
+		width: 100%;
+		min-width: 100%;
+
+		height: 100%;
+		min-height: calc(100vh - 72px);
+
+		background-color: $theme-color;
+		background: url("../img/bg.jpeg");
+		background-size: cover;
+		background-position: static;
+		color: #fff;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.search__wrap {
+			width: 100%;
+
+			.search__content {
+				background: #fff;
+				color: white;
+				padding: 20px;
+
+				.search__destination {
+					border: 2px solid $border-color;
+					border-radius: 3px;
+					color: $theme-color;
+					padding: 12px 20px;
+					outline: none;
+					width: 100%;
+					margin-bottom: 10px;
+
+					&::-webkit-input-placeholder {
+						color: $theme-color;
+					}
+				}
+
+				.search__date {
+					border: 2px solid $border-color;
+					border-radius: 3px;
+					color: $theme-color;
+					padding: 12px 20px;
+					outline: none;
+					width: 100%;
+					margin-bottom: 10px;
+				}
+
+				.search__submit {
+					border: 2px solid $btn-yellow;
+					background: $btn-yellow;
+					border-radius: 3px;
+					color: $white;
+					padding: 12px 20px;
+					width: 100%;
+				}
+
+				.unit {
+					float: left;
+					margin-right: 10px;
+
+					label {
+						display: block;
+						color: $search__label;
+						margin-bottom: 5px;
+						margin-top: 5px;
+						font-size: 10px;
+					}
+
+					input {
+						display: block;
+						padding: 5px 10px;
+						border: 1px solid $border-color;
+						border-radius: 2px;
+						outline: none;
+						color: $search__label;
+						width: 100%;
+						min-width: 150px;
+					}
+
+					.search__select {
+						border: 1px solid $border-color;
+						border-radius: 2px;
+						padding: 5px 10px;
+						outline: none;
+						width: 100%;
+						min-width: 181px;
+						color: $search__label;
+					}
+				}
+			}
+		}
+
+		.btn-flights {
+			background-color: $btn-yellow;
+			color: #FFF;
+			border: 1px solid $btn-yellow;
+			border-radius: 0px;
+			padding: 20px 30px;
+			font-size: 12px;
+		}
+
+		.btn-hotels {
+			background-color: $btn-blue;
+			color: #FFF;
+			border: 1px solid $btn-blue;
+			border-radius: 0px;
+			padding: 20px 30px;
+			font-size: 12px;
+		}
+	}
+
+/*  ====================================
+	3. CONTENT
+    ====================================  */
+
+main {
+	width: 100%;
+	height: 100%;
+
+	section {
+		padding: 100px 0px;
+		color: #E4E4E4;
+
+		// SECTION OFFERS
+		&#offers {
+			.btn-suggest {
+				background-color: #f2f2f2;
+				color: #c7c7c7;
+				border: 1px solid #ebebeb;
+				border-radius: 0px;
+				padding: 10px 20px;
+				font-size: 12px;
+			}
+
+			h1 {
+				color: $theme-color;
+				font-size: 24px;
+				margin: 0px;
+				margin-top: 10px;
+			}
+
+            .offers__wrap {
+                padding: 0 50px 50px;
+			}
+
+	        .offer__thumbnail {
+	            float: left;
+	            width: 25%;
+	            background-repeat: no-repeat;
+	            background-size: cover;
+	            background-position: center;
+	            position: relative;
+	            overflow: hidden;
+	            transition: all 1s ease-in-out;
+
+				&:hover figcaption {
+					visibility: visible;
+					opacity: 1;
+					padding: 20px;
+					transition: opacity 200ms ease 0s;
+				}
+
+	            figcaption {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					background: rgba(0, 106, 186, 1);
+					color: #fff;
+
+					visibility: hidden;
+					opacity: 0;
+
+					-webkit-transition: visibility opacity 0.2s;
+					transition: opacity 200ms ease 0s;
+
+					h1 {
+						color: #fff;
+					}
+
+					.promo {
+						font-size: 10px;
+						transform: uppercase;
+						font-weight: 700;
+					}
+
+					.price {
+						font-size: 20px;
+						display: block;
+					}
+				}
+			}
+		}
+
+		&#discount {
+			background-color: #f7f7f7;
+			color: #bfbfbf;
+		}
+
+		&#about {
+			color: #2684c6;
+			background: #fff;
+		}
+	}
+}
+	@media (max-width: 550px) {
+		main {
+			section {
+				&#offers {
+				    .offer__thumbnail {
+				        width: 100%;
+				        font-size: 10px;
+
+						&:hover figcaption {
+							padding: 5px;
+						}
+
+						figcaption {
+					        h1 {
+					        	font-size: 20px;
+					        }
+
+					        p {
+					        	display: none;
+					        }
+				        }
+				    }
+				}
+			}
+		}
+	}
+
+	@media (max-width: 760px) {
+		main {
+			section {
+				&#offers {
+				    .offer__thumbnail {
+				        width: 50%;
+				        font-size: 10px;
+
+						&:hover figcaption {
+							padding: 10px;
+						}
+
+						figcaption {
+					        h1 {
+					        	font-size: 20px;
+					        }
+
+					        p {
+					        	font-size: 16px;
+					        }
+				        }
+				    }
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1000px) {
+		main {
+			section {
+				&#offers {
+				    .offer__thumbnail {
+				        width: 50%;
+				        font-size: 10px;
+
+						&:hover figcaption {
+							padding: 10px;
+						}
+
+						figcaption {
+					        h1 {
+					        	font-size: 20px;
+					        }
+
+					        p {
+					        	display: none;
+					        }
+				        }
+				    }
+				}
+			}
+		}
+	}
+
+/*  ====================================
+    4. FOOTER
+    ====================================  */
+
+  	.footer__info {
+  		background: $theme-color;
+  		color: #fff;
+  		padding: 40px 0px;
+  	}
+
+  	.footer__copy {
+  		background: $footer__copy;
+  		color: #fff;
+  		padding: 10px 0px;
+  	}
